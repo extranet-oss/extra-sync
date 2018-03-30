@@ -22,7 +22,7 @@ module.exports = {
           let decodedJson = jsonwt.decode(jwt);
           hook.result = {
             login: decodedJson.login,
-            readOnly: decodedJson.parent
+            readOnly: !!decodedJson.parent
           };
         }
         next();

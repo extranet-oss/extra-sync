@@ -1,12 +1,14 @@
 // Initializes the `check-autologin` service on path `/check-autologin`
-const createService = require('../legacy_intra-query/legacy_intra-GET.class.js');
+const createService = require('./check-autologin.class.js');
 const hooks = require('./check-autologin.hooks');
 
 module.exports = function (app) {
+  
+  const paginate = app.get('paginate');
 
   const options = {
     name: 'check-autologin',
-    url: ''
+    paginate
   };
 
   // Initialize our service with any options it requires

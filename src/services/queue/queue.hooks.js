@@ -1,4 +1,4 @@
-
+const {disallow} = require('feathers-hooks-common');
 
 module.exports = {
   before: {
@@ -6,9 +6,15 @@ module.exports = {
     find: [],
     get: [],
     create: [],
-    update: [],
-    patch: [],
-    remove: []
+    update: [
+      disallow('external')
+    ],
+    patch: [
+      disallow('external')
+    ],
+    remove: [
+      disallow('external')
+    ]
   },
 
   after: {

@@ -1,23 +1,23 @@
-// Initializes the `test` service on path `/test`
-const createService = require('feathers-nedb');
-const createModel = require('../../models/test.model');
-const hooks = require('./test.hooks');
+// Initializes the `queue` service on path `/queue`
+const createService = require('feathers-mongoose');
+const createModel = require('../../models/queue.model');
+const hooks = require('./queue.hooks');
 
 module.exports = function (app) {
   const Model = createModel(app);
   const paginate = app.get('paginate');
 
   const options = {
-    name: 'test',
+    name: 'queue',
     Model,
     paginate
   };
 
   // Initialize our service with any options it requires
-  app.use('/test', createService(options));
+  app.use('/queue', createService(options));
 
   // Get our initialized service so that we can register hooks and filters
-  const service = app.service('test');
+  const service = app.service('queue');
 
   service.hooks(hooks);
 };
