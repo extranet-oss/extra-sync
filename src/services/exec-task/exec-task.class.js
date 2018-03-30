@@ -17,11 +17,9 @@ class Service {
         token: data.token
       });
       switch (req.res.statusCode) {
-      case 404:
-        throw new errors.NotFound('Intranet page not found');
-        break;
+        case 404:
+          throw new errors.NotFound('Intranet page not found');
       }
-      console.log(req.res.statusCode);
       return req.body;
     }
     return {};
