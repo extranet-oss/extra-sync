@@ -8,12 +8,13 @@
 **/
 
 const { NotAuthenticated } = require('@feathersjs/errors');
+const syncConfig = require('../../config/sync-config.json');
 
 module.exports = () => {
   return async (hook) => {
     if (!hook.params.query.auth)
       throw new NotAuthenticated('Missing auth param');
-    if (!hook.app.settings.validTokens.includes(hook.params.query.auth))
+    if (!syncConfig.validTokens.includes(hook.params.query.auth))
       throw new NotAuthenticated('Wrong token');
   };
 };

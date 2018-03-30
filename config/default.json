@@ -6,8 +6,5 @@
     "default": 10,
     "max": 50
   },
-  "validTokens": [
-    "lJBQOLFxZKnXA5uluWJzzf0iVt7AndeV2bqVgOs3xKsjLtenQWy0xrcijZqdEFdNieUX3WTvo43qwrNkplnGZjcuHN0gU4xl7IYx97NqFfAcVK54OyhATajBIzKntEoxOqsAZfcDTVZuRM2mMPABJREDCfOaFwoFpuZkmwKhWcItLegAbaSFkazWgTb9nTnujt85Fr1Bx8q1nYWS6i3q70FOCECAaryvbQc3eIyNOPfg5Ntjiu1cqeY7rDmFG8lK"
-  ],
   "mongodb": "mongodb://localhost:27017/extra_sync"
 }
